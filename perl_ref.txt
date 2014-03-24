@@ -63,3 +63,31 @@
          10 ctime               10 hinthash    @INC  include paths
          11 blksz               3..10 only     @_    subroutine args
          12 blcks               with EXPR      %ENV  environment
+
+
+>>>>>>>>>>>> perldoc perlreftut <<<<<<<<<<<<<<<<<<<<<<<<
+
+ Make Rule 1
+
+       If you put a "\" in front of a variable, you get a reference to that variable.
+
+           $aref = \@array;         # $aref now holds a reference to @array
+           $href = \%hash;          # $href now holds a reference to %hash
+   
+
+       Once the reference is stored in a variable like $aref or $href, you can copy it or store it just the same as any other scalar value:
+
+           $xy = $aref;             # $xy now holds a reference to @array
+           $p[3] = $href;           # $p[3] now holds a reference to %hash
+           $z = $p[3];              # $z now holds a reference to %hash
+           $sref = \$scalar;        # $sref now holds a reference to $scalar
+
+Make Rule 2
+
+       "[ ITEMS ]" makes a new, anonymous array, and returns a reference to that array.  "{ ITEMS }" makes a new, anonymous hash, and returns a reference to that hash.
+
+           $aref = [ 1, "foo", undef, 13 ];
+           # $aref now holds a reference to an array
+
+           $href = { APR => 4, AUG => 8 };
+           # $href now holds a reference to a hash
