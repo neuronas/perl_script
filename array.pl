@@ -18,3 +18,7 @@ use warnings;
 print 	@animals[0,1], "\n" ;                 # 
 print	@animals[0..2], "\n";                 # 
 print	@animals[1..$#animals], "\n";         # $#animals obtenemos el la cantidad de elementos del array 
+
+
+
+asdf
